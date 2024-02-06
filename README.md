@@ -1,5 +1,7 @@
 # DotNetTrainingBatch3
 
+https://www.javatpoint.com/ado-net-tutorial
+
 ado.net CRUD
 dapper
 ef core

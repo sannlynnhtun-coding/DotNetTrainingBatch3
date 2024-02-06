@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 using DotNetTrainingBatch3.ConsoleApp.AdoDotNetExamples;
+using DotNetTrainingBatch3.ConsoleApp.DapperExamples;
 
 Console.WriteLine("Hello, World!");
 
@@ -71,14 +72,24 @@ Console.WriteLine("Hello, World!");
 //    Console.WriteLine("Content..." + dr["BlogContent"]);
 //}
 
-AdoDotNetExample adoDotNetExample = new AdoDotNetExample();
-//adoDotNetExample.Read();
-//adoDotNetExample.Edit(1);
-//adoDotNetExample.Edit(11);
-//adoDotNetExample.Create("test title", "test author", "test content");
-adoDotNetExample.Update(1002, "test title 2", "test author 2", "test content 2");
-//adoDotNetExample.Update(1002, content: "test title 2", author: "test author 2", title: "test content 2");
-adoDotNetExample.Delete(1002);
+//AdoDotNetExample adoDotNetExample = new AdoDotNetExample();
+////adoDotNetExample.Read();
+////adoDotNetExample.Edit(1);
+////adoDotNetExample.Edit(11);
+////adoDotNetExample.Create("test title", "test author", "test content");
+//adoDotNetExample.Update(1002, "test title 2", "test author 2", "test content 2");
+////adoDotNetExample.Update(1002, content: "test title 2", author: "test author 2", title: "test content 2");
+//adoDotNetExample.Delete(1002);
+
+DapperExample dapperExample = new DapperExample();
+//dapperExample.Read();
+
+//dapperExample.Edit(1);
+//dapperExample.Edit(11);
+
+//dapperExample.Create("test title", "test author", "test content");
+//dapperExample.Update(2002, "test title 2", "test author 2", "test content 2");
+dapperExample.Delete(2002);
 
 // hello
 
