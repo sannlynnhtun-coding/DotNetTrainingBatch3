@@ -80,4 +80,6 @@ adoDotNetExample.Update(1002, "test title 2", "test author 2", "test content 2")
 //adoDotNetExample.Update(1002, content: "test title 2", author: "test author 2", title: "test content 2");
 adoDotNetExample.Delete(1002);
 
+// hello
+
 Console.ReadKey();
