@@ -1,5 +1,7 @@
 # DotNetTrainingBatch3
 
+https://stackoverflow.com/questions/17615260/the-certificate-chain-was-issued-by-an-authority-that-is-not-trusted-when-conn
+
 https://www.javatpoint.com/ado-net-tutorial
 
 ado.net CRUD
