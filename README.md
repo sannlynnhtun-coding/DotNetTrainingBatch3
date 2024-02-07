@@ -4,7 +4,7 @@ https://www.javatpoint.com/ado-net-tutorial
 
 ado.net CRUD
 dapper
-ef core
+ef core (code first, database first)
 
 C#
 
