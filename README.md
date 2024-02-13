@@ -1,5 +1,20 @@
 # DotNetTrainingBatch3
 
+https://stackedit.io/app#
+
+https://www.openapis.org/
+
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+```
+Informational responses (100 – 199)
+Successful responses (200 – 299)
+Redirection messages (300 – 399)
+Client error responses (400 – 499)
+Server error responses (500 – 599)
+```
+
+![image info](https://media.geeksforgeeks.org/wp-content/uploads/20230216170349/What-is-an-API.png)
+
 https://stackoverflow.com/questions/17615260/the-certificate-chain-was-issued-by-an-authority-that-is-not-trusted-when-conn
 
 https://www.javatpoint.com/ado-net-tutorial
