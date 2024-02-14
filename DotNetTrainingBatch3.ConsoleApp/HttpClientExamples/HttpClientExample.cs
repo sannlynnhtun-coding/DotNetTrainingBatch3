@@ -22,6 +22,7 @@ namespace DotNetTrainingBatch3.ConsoleApp.HttpClientExamples
         {
             HttpClient client = new HttpClient();
             HttpResponseMessage response = await client.GetAsync("https://localhost:7131/api/Blog");
+            //HttpResponseMessage response2 = client.GetAsync("https://localhost:7131/api/Blog").Result;
             if (response.IsSuccessStatusCode)
             {
                 string jsonStr = await response.Content.ReadAsStringAsync();
