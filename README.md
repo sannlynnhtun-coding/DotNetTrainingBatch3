@@ -1,5 +1,66 @@
 # DotNetTrainingBatch3
 
+[x] Console App
+
+[x] Ado.Net (CRUD)
+[x] Dapper  (CRUD)
+[x] EF Entity Framework (Code First => Create Table, Database First => use in Code) (CRUD)
+RepoDB
+
+[x] Postman
+[x] Asp.Net Core Web Api (Rest Api)
+    [x] EF
+    Dapper
+    Ado.Net
+    
+[x] Console App connect with ASP.NET Core Web API
+    [x] HttpClient
+    RestClient
+    Refit
+
+[x] Burma Project Ideas(Bird)
+
+
+html, css, javascript
+jquery
+jquery plugins
+sweetalert https://sweetalert2.github.io/
+notiflix https://notiflix.github.io/ Notify Report Confirm Loading Block
+datatable https://datatables.net/examples/index https://datatables.net/ https://datatables.net/download/
+datetime picker https://fengyuanchen.github.io/datepicker/ https://github.com/fengyuanchen/datepicker/blob/master/README.md https://github.com/fengyuanchen/datepicker/releases/tag/v1.0.10
+ladda button https://cdnjs.com/libraries/ladda-bootstrap https://msurguy.github.io/ladda-bootstrap/ https://github.com/msurguy/ladda-bootstrap
+radio checkbox https://bantikyan.github.io/icheck-bootstrap/ https://cdnjs.com/libraries/icheck-bootstrap https://github.com/bantikyan/icheck-bootstrap https://penguin-arts.com/how-to-check-if-a-checkbox-is-checked-using-icheck-library/
+toast https://apvarun.github.io/toastify-js/# https://github.com/apvarun/toastify-js/blob/master/README.md
+
+Asp.Net Core MVC (submit, ajax)
+    EF 
+    Ado.Net
+    Dapper
+
+Chart [ApexChart, ChartJs, HighCharts, CanvasJS]
+
+Api Call [MVC]
+    HttpClient
+    RestClient
+    Refit
+
+Minimal Api
+Text Logging
+Db Logging
+
+SignalR - (Insert Data => UpdateChart, Chat Message)
+UI Design
+Blazor CRUD [Server, WASM]
+Deploy WASM
+Deploy on IIS
+
+------------------------------------------------------
+
+Middleware For MVC
+
+GraphQL
+gRPC
+
 https://stackedit.io/app#
 
 https://www.openapis.org/
