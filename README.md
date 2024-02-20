@@ -1,5 +1,8 @@
 # DotNetTrainingBatch3
 
+https://github.com/reactiveui/refit
+https://restsharp.dev/
+
 [x] Console App
 
 [x] Ado.Net (CRUD)
