@@ -16,9 +16,12 @@ namespace DotNetTrainingBatch3.ConsoleApp.RefitExamples
 
         public async Task Run()
         {
-            //await Read();
+            await Read();
             await Edit(1);
             await Edit(0);
+            await Create("title", "author", "content");
+            await Update(5002, "title 2", "author 3", "content 4");
+            await Delete(5002);
         }
 
         private async Task Read()
