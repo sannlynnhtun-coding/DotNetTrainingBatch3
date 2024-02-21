@@ -1,5 +1,21 @@
 # DotNetTrainingBatch3
 
+Node.js
+https://www.youtube.com/watch?v=zb3Qk8SG5Ms&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU
+
+JSON Server
+https://www.youtube.com/watch?v=mAqYJF-yxO8&t=15s
+https://www.youtube.com/watch?v=VF3TI4Pj_kM
+
+Express.js
+https://youtu.be/nH9E25nkk3I?si=5J4kCb3v28LW3uYD
+
+React.js
+https://www.youtube.com/watch?v=j942wKiXFu8&list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d
+
+React.js Crud using JSON placeholder
+https://youtu.be/Zhmuc_NFiO8?si=pAH5XDnoDpcHz8X7
+
 https://github.com/reactiveui/refit
 https://restsharp.dev/
 
