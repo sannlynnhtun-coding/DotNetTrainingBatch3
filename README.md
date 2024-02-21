@@ -1,5 +1,12 @@
 # DotNetTrainingBatch3
 
+https://code.visualstudio.com/download
+
+https port - 443
+http port - 80
+
+mssql port - 1433
+
 Node.js
 https://www.youtube.com/watch?v=zb3Qk8SG5Ms&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU
 
