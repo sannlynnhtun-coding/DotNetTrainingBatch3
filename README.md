@@ -19,7 +19,7 @@ RepoDB
 [x] Console App connect with ASP.NET Core Web API
     [x] HttpClient
     [x] RestClient
-    Refit
+    [x] Refit
 
 [x] Burma Project Ideas(Bird)
 
