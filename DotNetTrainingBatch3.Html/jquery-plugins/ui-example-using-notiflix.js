@@ -1,24 +1,30 @@
 const tblBlog = 'Tbl_Blog';
 let _blogId = '';
 
-runBlog();
+// runBlog();
+
+function generateData(rowCount) {
+    for (let i = 0; i < rowCount; i++) {
+        let no = i + 1;
+        createBlog('title' + no, 'author' + no, `content ${no}`);
+    }
+}
 
 function runBlog() {
     readBlog();
-    // createBlog('title', 'author', 'content');
+    createBlog('title', 'author', 'content');
 
-    // editBlog('0f9c7ca0-42d7-4613-a851-80760503f047');
-    // editBlog('0');
+    editBlog('0f9c7ca0-42d7-4613-a851-80760503f047');
+    editBlog('0');
 
-    // const id = prompt("Enter ID");
-    // deleteBlog(id);
 
-    //  const id = prompt("Enter ID");
-    //  const title  = prompt("Enter Title");
-    //  const author  = prompt("Enter Author");
-    //  const content  = prompt("Enter Content");
+    const id = prompt("Enter ID");
+    const title = prompt("Enter Title");
+    const author = prompt("Enter Author");
+    const content = prompt("Enter Content");
 
-    //  updateBlog(id, title, author, content);
+    updateBlog(id, title, author, content);
+    deleteBlog(id);
 }
 
 function readBlog() {
@@ -106,47 +112,37 @@ function updateBlog(id, title, author, content) {
 }
 
 function deleteBlog(id) {
-    Swal.fire({
-        title: "Confirm",
-        text: "Are you sure want to delete?",
-        icon: "question",
-        showCancelButton: true,
-        confirmButtonText: "Yes"
-    }).then((result) => {
-        if (result.isConfirmed) {
-            let lstBlog = getBlogs();
+    Notiflix.Confirm.show(
+        'Confirm',
+        "Are you sure want to delete?",
+        'Yes',
+        'No',
+        function okCb() {
+            Notiflix.Block.dots('#frm1');
 
-            let lst = lstBlog.filter(x => x.Id === id); // array
-            if (lst.length === 0) {
-                console.log('No data found.');
-                return;
-            }
+            setTimeout(() => {
+                let lstBlog = getBlogs();
 
-            lstBlog = lstBlog.filter(x => x.Id !== id);
+                let lst = lstBlog.filter(x => x.Id === id); // array
+                if (lst.length === 0) {
+                    console.log('No data found.');
+                    return;
+                }
 
-            setLocalStorage(lstBlog);
+                lstBlog = lstBlog.filter(x => x.Id !== id);
 
-            successMessage('Deleting Successful.');
+                setLocalStorage(lstBlog);
 
-            readBlog();
+                Notiflix.Block.remove('#frm1');
+
+                successMessage('Deleting Successful.');
+
+                readBlog();
+            }, 3000);
+        },
+        function cancelCb() {
         }
-    });
-    // let result = confirm('Are you sure want to delete?');
-    // if (!result) return;
-
-    // let lstBlog = getBlogs();
-
-    // let lst = lstBlog.filter(x => x.Id === id); // array
-    // if (lst.length === 0) {
-    //     console.log('No data found.');
-    //     return;
-    // }
-
-    // lstBlog = lstBlog.filter(x => x.Id !== id);
-
-    // setLocalStorage(lstBlog);
-
-    // readBlog();
+    );
 }
 
 function uuidv4() {
@@ -176,13 +172,21 @@ $('#btnSave').click(function () {
     const content = $('#Content').val();
 
     if (_blogId === '') {
-        createBlog(title, author, content);
-        successMessage('Saving Successful.');
+        Notiflix.Loading.circle();
+        setTimeout(() => {
+            createBlog(title, author, content);
+            Notiflix.Loading.remove();
+            successMessage('Saving Successful.');
+        }, 3000);
     }
     else {
-        updateBlog(_blogId, title, author, content);
-        successMessage('Updating Successful.');
-        _blogId = '';
+        Notiflix.Loading.circle();
+        setTimeout(() => {
+            updateBlog(_blogId, title, author, content);
+            Notiflix.Loading.remove();
+            successMessage('Updating Successful.');
+            _blogId = '';
+        }, 3000);
     }
 
     $('#Title').val('');
@@ -195,9 +199,10 @@ $('#btnSave').click(function () {
 })
 
 function successMessage(message) {
-    Swal.fire({
-        title: "Success",
-        text: message,
-        icon: "success"
-    });
+    // Notiflix.Notify.success(message);
+    Notiflix.Report.success(
+        'Success',
+        message,
+        'Okay',
+    );
 }
