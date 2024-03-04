@@ -26,67 +26,68 @@ https://youtu.be/Zhmuc_NFiO8?si=pAH5XDnoDpcHz8X7
 https://github.com/reactiveui/refit
 https://restsharp.dev/
 
-[x] Console App
+- [x] Console App
 
-[x] Ado.Net (CRUD)
-[x] Dapper  (CRUD)
-[x] EF Entity Framework (Code First => Create Table, Database First => use in Code) (CRUD)
-RepoDB
+- [x] Ado.Net (CRUD)
+- [x] Dapper  (CRUD)
+- [x] EF Entity Framework (Code First => Create Table, Database First => use in Code) (CRUD)
+- RepoDB
 
-[x] Postman
-[x] Asp.Net Core Web Api (Rest Api)
-    [x] EF
-    Dapper
-    Ado.Net
+- [x] Postman
+- [x] Asp.Net Core Web Api (Rest Api)
+    - [x] EF
+    - Dapper
+    - Ado.Net
     
-[x] Console App connect with ASP.NET Core Web API
-    [x] HttpClient
-    [x] RestClient
-    [x] Refit
+- [x] Console App connect with ASP.NET Core Web API
+    - [x] HttpClient
+    - [x] RestClient
+    - [x] Refit
 
-[x] Burma Project Ideas(Bird)
+- [x] Burma Project Ideas(Bird)
 
-
-[x] html, css, javascript
-[x] bootstrap
-[x] jquery
-[x] jquery plugins
-    [x] sweetalert https://sweetalert2.github.io/
-    [x] notiflix https://notiflix.github.io/ Notify Report Confirm Loading Block
-    [x] datatable https://datatables.net/examples/index https://datatables.net/ https://datatables.net/download/
+- [x] html, css, javascript
+- [x] bootstrap
+- [x] jquery
+- [x] jquery plugins
+    - [x] sweetalert https://sweetalert2.github.io/
+    - [x] notiflix https://notiflix.github.io/ Notify Report Confirm Loading Block
+    - [x] datatable https://datatables.net/examples/index https://datatables.net/ https://datatables.net/download/
     - datetime picker https://fengyuanchen.github.io/datepicker/ https://github.com/fengyuanchen/datepicker/blob/master/README.md https://github.com/fengyuanchen/datepicker/releases/tag/v1.0.10
     - ladda button https://cdnjs.com/libraries/ladda-bootstrap https://msurguy.github.io/ladda-bootstrap/ https://github.com/msurguy/ladda-bootstrap
     - radio checkbox https://bantikyan.github.io/icheck-bootstrap/ https://cdnjs.com/libraries/icheck-bootstrap https://github.com/bantikyan/icheck-bootstrap https://penguin-arts.com/how-to-check-if-a-checkbox-is-checked-using-icheck-library/
     - toast https://apvarun.github.io/toastify-js/# https://github.com/apvarun/toastify-js/blob/master/README.md
 
-Asp.Net Core MVC (submit, ajax)
-    EF 
-    Ado.Net
-    Dapper
+- Asp.Net Core MVC (submit, ajax)
+    - EF 
+    - Ado.Net
+    - Dapper
 
-Chart [ApexChart, ChartJs, HighCharts, CanvasJS]
+- Chart [ApexChart, ChartJs, HighCharts, CanvasJS]
 
-Api Call [MVC]
-    HttpClient
-    RestClient
-    Refit
+- Api Call [MVC]
+    - HttpClient
+    - RestClient
+    - Refit
 
-Minimal Api
-Text Logging
-Db Logging
+- Minimal Api
+- Text Logging
+- Db Logging
 
-SignalR - (Insert Data => UpdateChart, Chat Message)
-UI Design
-Blazor CRUD [Server, WASM]
-Deploy WASM
-Deploy on IIS
+- SignalR - (Insert Data => UpdateChart, Chat Message)
+- UI Design
+- Blazor CRUD [Server, WASM]
+- Deploy WASM
+- Deploy on IIS
 
 ------------------------------------------------------
 
-Middleware For MVC
+- Middleware For MVC
 
-GraphQL
-gRPC
+- GraphQL
+- gRPC
+
+------------------------------------------------------
 
 https://stackedit.io/app#
 
@@ -94,11 +95,11 @@ https://www.openapis.org/
 
 https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 ```
-Informational responses (100 – 199)
-Successful responses (200 – 299)
-Redirection messages (300 – 399)
-Client error responses (400 – 499)
-Server error responses (500 – 599)
+Informational responses (100 â€“ 199)
+Successful responses (200 â€“ 299)
+Redirection messages (300 â€“ 399)
+Client error responses (400 â€“ 499)
+Server error responses (500 â€“ 599)
 ```
 
 ![image info](https://media.geeksforgeeks.org/wp-content/uploads/20230216170349/What-is-an-API.png)
