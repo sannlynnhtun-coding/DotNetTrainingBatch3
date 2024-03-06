@@ -12,11 +12,14 @@
 
   <link rel="stylesheet" href="plugins/notiflix-3.2.7/notiflix-3.2.7.min.css">
 
-
+  <!-- 
   <link
     href="https://cdn.datatables.net/v/bs5/jszip-3.10.1/dt-2.0.1/af-2.7.0/b-3.0.0/b-colvis-3.0.0/b-html5-3.0.0/b-print-3.0.0/cr-2.0.0/date-1.5.2/fc-5.0.0/fh-4.0.0/kt-2.12.0/r-3.0.0/rg-1.5.0/rr-1.5.0/sc-2.4.0/sb-1.7.0/sp-2.3.0/sl-2.0.0/sr-1.4.0/datatables.min.css"
-    rel="stylesheet">
+    rel="stylesheet"> -->
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ladda-bootstrap/0.9.4/ladda-themeless.min.css"
+    integrity="sha512-O82mrFLGbN9lUKQvbguKzEWmMtn4jO6txC9byiL0cjPGz4MeREeBY9dQR0ymgy8LhRgUL8JG0HtAGKYzg8pkTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -38,7 +41,10 @@
         <input type="text" class="form-control" id="Content">
       </div>
 
-      <button class="btn btn-primary w-100 py-2" type="button" id="btnSave">Save</button>
+      <!-- <button class="btn btn-primary w-100 py-2" type="button" id="btnSave">Save</button> -->
+      <button type="button" class="btn btn-primary ladda-button" id="btnSave" data-style="expand-left">
+        <span class="ladda-label">Save</span>
+      </button>
     </form>
 
     <table class="table" id="datatable">
@@ -88,12 +94,21 @@
   <script src="plugins/notiflix-3.2.7/notiflix-3.2.7.min.js"></script>
   <!-- <script src="jquery-plugins/ui-example-using-notiflix.js"></script> -->
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
   <script
-    src="https://cdn.datatables.net/v/bs5/jszip-3.10.1/dt-2.0.1/af-2.7.0/b-3.0.0/b-colvis-3.0.0/b-html5-3.0.0/b-print-3.0.0/cr-2.0.0/date-1.5.2/fc-5.0.0/fh-4.0.0/kt-2.12.0/r-3.0.0/rg-1.5.0/rr-1.5.0/sc-2.4.0/sb-1.7.0/sp-2.3.0/sl-2.0.0/sr-1.4.0/datatables.min.js"></script>
+    src="https://cdn.datatables.net/v/bs5/jszip-3.10.1/dt-2.0.1/af-2.7.0/b-3.0.0/b-colvis-3.0.0/b-html5-3.0.0/b-print-3.0.0/cr-2.0.0/date-1.5.2/fc-5.0.0/fh-4.0.0/kt-2.12.0/r-3.0.0/rg-1.5.0/rr-1.5.0/sc-2.4.0/sb-1.7.0/sp-2.3.0/sl-2.0.0/sr-1.4.0/datatables.min.js"></script> -->
 
-  <script src="jquery-plugins/ui-example-using-datatable.js"></script>
+  <!-- <script src="jquery-plugins/ui-example-using-datatable.js"></script> -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ladda-bootstrap/0.9.4/spin.min.js"
+    integrity="sha512-qByKQKO3eTwzJtP8Y395YbP45QyYZNpJfYu8jfFpWgFTK2xWIiOER7G+63EoXk475fBFzY6HIhbEUio6m72EaQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ladda-bootstrap/0.9.4/ladda.min.js"
+    integrity="sha512-OxowQ96EheBKRxTivGsizVvTK8bWt2xZlymiMZ9MArbmOmuxbv+2IlC46k4gZPhZH5eVQAm0F6lk9Yt6M4xu7A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="jquery-plugins/ui-example-using-ladda-button.js"></script>
 </body>
 
 </html>
