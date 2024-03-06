@@ -1,5 +1,10 @@
 # DotNetTrainingBatch3
 
+MVC
+Model View Controller
+
+Controller View(model - dto)
+
 https://code.visualstudio.com/download
 
 https port - 443
@@ -57,6 +62,7 @@ https://restsharp.dev/
     - [x] ladda button https://cdnjs.com/libraries/ladda-bootstrap https://msurguy.github.io/ladda-bootstrap/ https://github.com/msurguy/ladda-bootstrap
     - [x] radio checkbox https://bantikyan.github.io/icheck-bootstrap/ https://cdnjs.com/libraries/icheck-bootstrap https://github.com/bantikyan/icheck-bootstrap https://penguin-arts.com/how-to-check-if-a-checkbox-is-checked-using-icheck-library/
     - [x] toast https://apvarun.github.io/toastify-js/# https://github.com/apvarun/toastify-js/blob/master/README.md
+    - [x] Chart [ApexChart]
 
 - Asp.Net Core MVC (submit, ajax)
     - EF 
