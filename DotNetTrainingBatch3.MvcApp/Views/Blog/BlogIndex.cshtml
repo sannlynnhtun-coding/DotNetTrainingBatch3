@@ -5,19 +5,25 @@
     int count = 0;
 }
 <h4>Blog</h4>
+<a href="/Blog/Create" class="btn btn-outline-success">New</a>
 <table class="table">
     <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Title</th>
-            <th scope="col">Author</th>
-            <th scope="col">Content</th>
-        </tr>
+    <tr>
+        <td></td>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Author</th>
+        <th scope="col">Content</th>
+    </tr>
     </thead>
     <tbody>
         @foreach (BlogModel item in Model)
         {
             <tr>
+                <td>
+                    <a href="/Blog/Edit/@item.BlogId" class="btn btn-warning">Edit</a>
+                    <a href="/Blog/Delete/@item.BlogId" class="btn btn-danger">Delete</a>
+                </td>
                 <th scope="row">@(++count)</th>
                 <td>@item.BlogTitle</td>
                 <td>@item.BlogAuthor</td>
