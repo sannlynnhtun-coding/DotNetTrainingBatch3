@@ -1,0 +1,62 @@
+﻿<div class="mb-3">
+    <label class="form-label">Title</label>
+    <input type="text" class="form-control" id="BlogTitle" name="BlogTitle">
+</div>
+<div class="mb-3">
+    <label class="form-label">Author</label>
+    <input type="text" class="form-control" id="BlogAuthor" name="BlogAuthor">
+</div>
+<div class="mb-3">
+    <label class="form-label">Content</label>
+    <input type="text" class="form-control" id="BlogContent" name="BlogContent">
+</div>
+<a href="/Blog" class="btn btn-dark">Back</a>
+<button type="button" class="btn btn-success" id="btnSave">Save</button>
+@section scripts {
+    <script>
+        $('#btnSave').click(function () {
+            let title = $('#BlogTitle').val();
+            let author = $('#BlogAuthor').val();
+            let content = $('#BlogContent').val();
+
+            let _reqModel = {
+                BlogTitle: title,
+                BlogAuthor: author,
+                BlogContent: content,
+            };
+
+            $.ajax({
+                url: "/BlogAjax/Save",
+                data: { blog: _reqModel },
+                // data: JSON.stringify(_reqModel),
+                type: "POST",
+                // contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    console.log(result);
+                    if(result.IsSuccess){
+                        Swal.fire({
+                            title: "Success.",
+                            text: result.Message,
+                            icon: "success",
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                location.href = "/BlogAjax";
+                            }
+                        });
+                    }
+                    else{
+                        Swal.fire({
+                            title: "Error!",
+                            text: result.Message,
+                            icon: "error"
+                        });
+                    }
+                },
+                error: function (errormessage) {
+                    console.log(errormessage.responseText);
+                }
+            });
+        })
+    </script>
+}

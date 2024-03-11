@@ -1,0 +1,63 @@
+﻿@model BlogModel
+<div class="mb-3">
+    <label class="form-label">Email address</label>
+    <input type="text" class="form-control" id="BlogTitle" name="BlogTitle" value="@Model.BlogTitle">
+</div>
+<div class="mb-3">
+    <label class="form-label">Email address</label>
+    <input type="text" class="form-control" id="BlogAuthor" name="BlogAuthor" value="@Model.BlogAuthor">
+</div>
+<div class="mb-3">
+    <label class="form-label">Email address</label>
+    <input type="text" class="form-control" id="BlogContent" name="BlogContent" value="@Model.BlogContent">
+</div>
+
+<a href="/Blog" class="btn btn-dark">Back</a>
+<button type="button" class="btn btn-success" id="btnUpdate">Update</button>
+
+@section scripts {
+    <script>
+        $('#btnUpdate').click(function () {
+            let title = $('#BlogTitle').val();
+            let author = $('#BlogAuthor').val();
+            let content = $('#BlogContent').val();
+
+            let _reqModel = {
+                BlogTitle: title,
+                BlogAuthor: author,
+                BlogContent: content,
+            };
+
+            $.ajax({
+                url: "/BlogAjax/Update/" + @Model.BlogId,
+                data: { blog: _reqModel },
+                type: "POST",
+                dataType: "json",
+                success: function (result) {
+                    console.log(result);
+                    if (result.IsSuccess) {
+                        Swal.fire({
+                            title: "Success.",
+                            text: result.Message,
+                            icon: "success",
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                location.href = "/BlogAjax";
+                            }
+                        });
+                    }
+                    else {
+                        Swal.fire({
+                            title: "Error!",
+                            text: result.Message,
+                            icon: "error"
+                        });
+                    }
+                },
+                error: function (errormessage) {
+                    console.log(errormessage.responseText);
+                }
+            });
+        })
+    </script>
+}
