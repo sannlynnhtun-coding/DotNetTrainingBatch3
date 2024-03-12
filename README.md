@@ -81,8 +81,8 @@ https://restsharp.dev/
     - [x] toast https://apvarun.github.io/toastify-js/# https://github.com/apvarun/toastify-js/blob/master/README.md
     - [x] Chart [ApexChart]
 
-- Asp.Net Core MVC (submit, ajax)
-    - EF 
+- [x] Asp.Net Core MVC (submit, ajax)
+    - [x] EF 
     - Ado.Net
     - Dapper
 
