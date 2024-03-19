@@ -1,4 +1,4 @@
-# .Net Training Batch 3
+# .NET Training Batch 3
 
 ```sql
 
