@@ -1,4 +1,4 @@
-# DotNetTrainingBatch3
+# .Net Training Batch 3
 
 ```sql
 
@@ -47,6 +47,8 @@ https://youtu.be/Zhmuc_NFiO8?si=pAH5XDnoDpcHz8X7
 
 https://github.com/reactiveui/refit
 https://restsharp.dev/
+
+![Alt text](https://uxdworld.com/wp-content/uploads/2018/12/pagination-1.gif)
 
 Visual Studio 2022 Preview
 https://visualstudio.microsoft.com/vs/preview/
