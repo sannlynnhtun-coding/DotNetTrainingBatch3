@@ -51,6 +51,12 @@ https://restsharp.dev/
 Visual Studio 2022 Preview
 https://visualstudio.microsoft.com/vs/preview/
 
+Ajax CRUD
+https://dev.to/duhbhavesh/how-to-use-fetch-api-for-crud-operations-57a0
+
+fetch
+axios
+
 - [x] Console App
 
 - [x] Ado.Net (CRUD)
