@@ -48,6 +48,9 @@ https://youtu.be/Zhmuc_NFiO8?si=pAH5XDnoDpcHz8X7
 https://github.com/reactiveui/refit
 https://restsharp.dev/
 
+Visual Studio 2022 Preview
+https://visualstudio.microsoft.com/vs/preview/
+
 - [x] Console App
 
 - [x] Ado.Net (CRUD)
@@ -86,7 +89,11 @@ https://restsharp.dev/
     - Ado.Net
     - Dapper
 
-- Chart [ApexChart, ChartJs, HighCharts, CanvasJS]
+- APS.NET Core MVC using JavaScript Chart
+    - [x] [ApexChart](http://apexcharts.com/docs/installation/)
+    - [x] [ChartJs](https://www.chartjs.org/docs/latest/getting-started/) (https://github.com/chartjs/Chart.js/blob/master/docs/scripts/utils.js)
+    - [x] [HighCharts](https://www.highcharts.com/demo)
+    - [x] [CanvasJS](https://canvasjs.com/javascript-charts/)
 
 - Api Call [MVC]
     - HttpClient
@@ -94,8 +101,13 @@ https://restsharp.dev/
     - Refit
 
 - Minimal Api
-- Text Logging
-- Db Logging
+
+- Logging
+    - Serilog
+        - Text Logging
+        - Db Logging
+    - NLog
+    - Log4net
 
 - SignalR - (Insert Data => UpdateChart, Chat Message)
 - UI Design
