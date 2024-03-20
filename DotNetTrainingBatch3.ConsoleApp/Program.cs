@@ -131,8 +131,8 @@ Console.WriteLine("Hello, World!");
 //Console.WriteLine(blog2.BlogContent);
 //// hello
 
-Console.WriteLine("Waiting for api...");
-Console.ReadKey();
+//Console.WriteLine("Waiting for api...");
+//Console.ReadKey();
 
 //HttpClientExample httpClientExample = new HttpClientExample();
 //await httpClientExample.Run();
@@ -140,7 +140,21 @@ Console.ReadKey();
 //RestClientExample restClientExample = new RestClientExample();
 //await restClientExample.Run();
 
-RefitExample refitExample = new RefitExample(); 
-await refitExample.Run();
+//RefitExample refitExample = new RefitExample(); 
+//await refitExample.Run();
+
+EFCoreExample eFCoreExample = new EFCoreExample();
+eFCoreExample.Generate(391);
+
+//int pageSize = 10;
+//AppDbContext db = new AppDbContext();
+//int rowCount = db.Blogs.Count();
+
+//int pageCount = rowCount / pageSize;
+//Console.WriteLine($"Current Page Size : {pageCount}");
+
+//if (rowCount % pageSize > 0)
+//    pageCount++;
+//Console.WriteLine($"Current Page Size : {pageCount}");
 
 Console.ReadKey();

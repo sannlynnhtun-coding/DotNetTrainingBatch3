@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using System.Numerics;
 
 namespace DotNetTrainingBatch3.ConsoleApp.EFCoreExamples
 {
@@ -93,6 +94,15 @@ namespace DotNetTrainingBatch3.ConsoleApp.EFCoreExamples
             string message = result > 0 ? "Deleting Successful." : "Deleting Failed.";
 
             Console.WriteLine(message);
+        }
+
+        public void Generate(int count)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                int rowNo = (i + 1);
+                Create("Title" + rowNo, "Author" + rowNo, "Content" + rowNo);
+            }
         }
     }
 }
