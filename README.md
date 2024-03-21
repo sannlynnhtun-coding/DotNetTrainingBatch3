@@ -94,14 +94,22 @@ axios
 
 - [x] Asp.Net Core MVC (submit, ajax)
     - [x] EF 
-    - Ado.Net
-    - Dapper
+    - [x] Ado.Net
+    - [x] Dapper
 
 - APS.NET Core MVC using JavaScript Chart
     - [x] [ApexChart](http://apexcharts.com/docs/installation/)
     - [x] [ChartJs](https://www.chartjs.org/docs/latest/getting-started/) (https://github.com/chartjs/Chart.js/blob/master/docs/scripts/utils.js)
     - [x] [HighCharts](https://www.highcharts.com/demo)
     - [x] [CanvasJS](https://canvasjs.com/javascript-charts/)
+
+- [x] ASP.NET Core - Dependency Injection
+    - [x] Singleton
+    - [x] Scoped
+    - [x] Transient
+
+- [x] AdoDotNetService
+- [x] DapperService
 
 - Api Call [MVC]
     - HttpClient
@@ -116,7 +124,8 @@ axios
         - Db Logging
     - NLog
     - Log4net
-
+    
+- Middleware For MVC
 - SignalR - (Insert Data => UpdateChart, Chat Message)
 - UI Design
 - Blazor CRUD [Server, WASM]
@@ -124,8 +133,6 @@ axios
 - Deploy on IIS
 
 ------------------------------------------------------
-
-- Middleware For MVC
 
 - GraphQL
 - gRPC

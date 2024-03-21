@@ -5,11 +5,16 @@ namespace DotNetTrainingBatch3.MvcApp.Controllers
 {
     public class BlogPaginationController : Controller
     {
+        private readonly AppDbContext _db;
+
+        public BlogPaginationController(AppDbContext db)
+        {
+            _db = db;
+        }
+
         [ActionName("Index")]
         public IActionResult BlogIndex(int pageNo = 1, int pageSize = 10)
         {
-            AppDbContext _db = new AppDbContext();
-
             int rowCount = _db.Blogs.Count();
 
             int pageCount = rowCount / pageSize;

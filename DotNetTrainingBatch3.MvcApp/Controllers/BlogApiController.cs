@@ -9,9 +9,9 @@ namespace DotNetTrainingBatch3.MvcApp.Controllers
     {
         private readonly AppDbContext _db;
 
-        public BlogApiController()
+        public BlogApiController(AppDbContext db)
         {
-            _db = new AppDbContext();
+            _db = db;
         }
 
         [HttpGet]

@@ -8,10 +8,11 @@ namespace DotNetTrainingBatch3.MvcApp.Controllers
     {
         private readonly AppDbContext _context;
 
-        public BlogAjaxController()
+        public BlogAjaxController(AppDbContext context)
         {
-            _context = new AppDbContext();
+            _context = context;
         }
+
 
         // https://localhost:7021/Blog/Index
         [ActionName("Index")]

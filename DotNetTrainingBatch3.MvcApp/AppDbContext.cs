@@ -6,18 +6,23 @@ namespace DotNetTrainingBatch3.MvcApp;
 
 public class AppDbContext : DbContext
 {
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
-        SqlConnectionStringBuilder sqlConnectionStringBuilder = new SqlConnectionStringBuilder()
-        {
-            DataSource = ".",
-            InitialCatalog = "TestDb",
-            UserID = "sa",
-            Password = "sasa@123",
-            TrustServerCertificate = true
-        };
-        optionsBuilder.UseSqlServer(sqlConnectionStringBuilder.ConnectionString);
+
     }
+
+    //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    //{
+    //    SqlConnectionStringBuilder sqlConnectionStringBuilder = new SqlConnectionStringBuilder()
+    //    {
+    //        DataSource = ".",
+    //        InitialCatalog = "TestDb",
+    //        UserID = "sa",
+    //        Password = "sasa@123",
+    //        TrustServerCertificate = true
+    //    };
+    //    optionsBuilder.UseSqlServer(sqlConnectionStringBuilder.ConnectionString);
+    //}
 
     public DbSet<BlogModel> Blogs { get; set; }
 
