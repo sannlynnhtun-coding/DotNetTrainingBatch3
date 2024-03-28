@@ -8,6 +8,7 @@ using DotNetTrainingBatch3.ConsoleApp.Models;
 using DotNetTrainingBatch3.ConsoleApp.RefitExamples;
 using DotNetTrainingBatch3.ConsoleApp.RestClientExamples;
 using Newtonsoft.Json;
+using Serilog;
 
 Console.WriteLine("Hello, World!");
 
@@ -143,8 +144,8 @@ Console.WriteLine("Hello, World!");
 //RefitExample refitExample = new RefitExample(); 
 //await refitExample.Run();
 
-EFCoreExample eFCoreExample = new EFCoreExample();
-eFCoreExample.Generate(391);
+//EFCoreExample eFCoreExample = new EFCoreExample();
+//eFCoreExample.Generate(391);
 
 //int pageSize = 10;
 //AppDbContext db = new AppDbContext();
@@ -156,5 +157,28 @@ eFCoreExample.Generate(391);
 //if (rowCount % pageSize > 0)
 //    pageCount++;
 //Console.WriteLine($"Current Page Size : {pageCount}");
+
+Log.Logger = new LoggerConfiguration()
+          .MinimumLevel.Debug()
+          .WriteTo.Console()
+          .WriteTo.File("logs/DotNetTrainingBatch3.ConsoleApp.log", rollingInterval: RollingInterval.Hour)
+          .CreateLogger();
+
+Log.Information("Hello, world!");
+
+int a = 10, b = 0;
+try
+{
+    Log.Debug("Dividing {A} by {B}", a, b);
+    Console.WriteLine(a / b);
+}
+catch (Exception ex)
+{
+    Log.Error(ex, "Something went wrong");
+}
+finally
+{
+    await Log.CloseAndFlushAsync();
+}
 
 Console.ReadKey();

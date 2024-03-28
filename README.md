@@ -111,16 +111,18 @@ axios
 - [x] AdoDotNetService
 - [x] DapperService
 
-- Api Call [MVC]
-    - HttpClient
-    - RestClient
-    - Refit
+------------------------------------------------------
 
-- Minimal Api
+- [x] Api Call [MVC]
+    - [x] HttpClient
+    - [x] RestClient
+    - [x] Refit
+
+- [x] Minimal Api
 
 - Logging
-    - Serilog
-        - Text Logging
+    - [x] Serilog
+        - [x] Text Logging
         - Db Logging
     - NLog
     - Log4net
