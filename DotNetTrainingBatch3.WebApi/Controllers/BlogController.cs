@@ -1,6 +1,7 @@
 ﻿using DotNetTrainingBatch3.WebApi.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace DotNetTrainingBatch3.WebApi.Controllers
 {
@@ -8,17 +9,24 @@ namespace DotNetTrainingBatch3.WebApi.Controllers
     [ApiController]
     public class BlogController : ControllerBase
     {
+        private readonly IConfiguration _configuration;
+        private readonly ILogger<BlogController> _logger;
         private readonly AppDbContext _db;
 
-        public BlogController()
+        public BlogController(ILogger<BlogController> logger, IConfiguration configuration)
         {
             _db = new AppDbContext();
+            _logger = logger;
+            _configuration = configuration;
         }
 
         [HttpGet]
         public IActionResult GetBlogs()
         {
+            var connectionString = _configuration.GetConnectionString("DbConnection");
             List<BlogModel> lst = _db.Blogs.OrderByDescending(x => x.BlogId).ToList();
+            _logger.LogInformation("Count is " + lst.Count.ToString());
+            _logger.LogInformation(JsonConvert.SerializeObject(lst, Formatting.Indented));
             return Ok(lst);
         }
 

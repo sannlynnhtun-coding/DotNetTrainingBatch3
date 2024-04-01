@@ -120,10 +120,10 @@ axios
 
 - [x] Minimal Api
 
-- Logging
-    - [x] Serilog
+- [x] Logging (Console App, Web Api)
+    - [x] [Serilog](https://serilog.net/)
         - [x] Text Logging
-        - Db Logging
+        - [x] Db Logging
     - NLog
     - Log4net
     
