@@ -195,3 +195,6 @@ C#
 - asp.net web forms
 - asp.net core web mvc [x]
 - asp.net core web api [x]
+
+https://www.c-sharpcorner.com/article/introduction-to-nlog-with-asp-net-core2/
+https://code-maze.com/aspnetcore-structured-logging-log4net/
