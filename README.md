@@ -127,12 +127,14 @@ axios
     - NLog
     - Log4net
     
+- [x] Realtime Chat Message using SignalR
+- [x] UI Design
+- [x] Deploy on IIS 
+
+- Realtime Chart App using SignalR 
 - Middleware For MVC
-- SignalR - (Insert Data => UpdateChart, Chat Message)
-- UI Design
 - Blazor CRUD [Server, WASM]
 - Deploy WASM
-- Deploy on IIS
 
 ------------------------------------------------------
 
