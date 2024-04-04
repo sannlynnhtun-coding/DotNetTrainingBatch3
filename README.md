@@ -133,7 +133,7 @@ axios
 - [x] UI Design
 - [x] Deploy on IIS 
 
-- Realtime Chart App using SignalR 
+- [x] Realtime Chart App using SignalR 
 - Middleware For MVC
 - Blazor CRUD [Server, WASM]
 - Deploy WASM
