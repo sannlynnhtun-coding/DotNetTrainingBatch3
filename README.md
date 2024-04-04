@@ -1,5 +1,7 @@
 # .NET Training Batch 3
 
+ Scaffold-DbContext "Server=.;Database=TestDb;User ID=sa;Password=sasa@123;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context AppDbContext -Tables Tbl_PieChart
+
 ```sql
 
 CREATE TABLE [dbo].[Tbl_Atm](

@@ -1,0 +1,59 @@
+﻿@model PieChartResponseModel
+@{
+    List<int> _series = Model.Series;
+    List<string> _labels = Model.Labels;
+}
+
+<div id="chart-container">
+    <div id="chart"></div>
+</div>
+
+@section scripts {
+    <script>
+        let _series = @Html.Raw(JsonConvert.SerializeObject(_series));
+        let _labels = @Html.Raw(JsonConvert.SerializeObject(_labels));
+
+        loadChart(_series, _labels);
+
+        function loadChart(series, labels) {
+            $('#chart-container').html(`<div id="chart"></div>`);
+
+            var options = {
+                series: series,
+                chart: {
+                    width: 380,
+                    type: 'pie',
+                },
+                labels: labels,
+                responsive: [{
+                    breakpoint: 480,
+                    options: {
+                        chart: {
+                            width: 200
+                        },
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }]
+            };
+
+            var chart = new ApexCharts(document.querySelector("#chart"), options);
+            chart.render();
+        }
+
+        var connection = new signalR.HubConnectionBuilder().withUrl("/notificationHub").build();
+
+        connection.on("ClientNotification", function (result) {
+            console.log(result);
+            const data = JSON.parse(result);
+            loadChart(data.Series, data.Labels);
+        });
+
+        connection.start().then(function () {
+        }).catch(function (err) {
+            return console.error(err.toString());
+        });
+
+    </script>
+}

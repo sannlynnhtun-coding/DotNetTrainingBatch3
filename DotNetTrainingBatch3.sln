@@ -24,9 +24,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch3.Minima
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch3.ConsoleApp2", "DotNetTrainingBatch3.ConsoleApp2\DotNetTrainingBatch3.ConsoleApp2.csproj", "{45630911-6431-40CC-92EB-5151E123E97A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTrainingBatch3.UI", "DotNetTrainingBatch3.UI\DotNetTrainingBatch3.UI.csproj", "{01ECF1EF-D8B0-40B8-85DE-85F4DAD74328}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch3.UI", "DotNetTrainingBatch3.UI\DotNetTrainingBatch3.UI.csproj", "{01ECF1EF-D8B0-40B8-85DE-85F4DAD74328}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTrainingBatch3.ChatApp", "DotNetTrainingBatch3.ChatApp\DotNetTrainingBatch3.ChatApp.csproj", "{A9AB3C67-B76C-4B95-8CE7-7900DFE0F54B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch3.ChatApp", "DotNetTrainingBatch3.ChatApp\DotNetTrainingBatch3.ChatApp.csproj", "{A9AB3C67-B76C-4B95-8CE7-7900DFE0F54B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTrainingBatch3.RealtimeChartApp", "DotNetTrainingBatch3.RealtimeChartApp\DotNetTrainingBatch3.RealtimeChartApp.csproj", "{B850D63F-9BFE-4D67-8EE7-547C67F00125}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -74,6 +76,10 @@ Global
 		{A9AB3C67-B76C-4B95-8CE7-7900DFE0F54B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9AB3C67-B76C-4B95-8CE7-7900DFE0F54B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9AB3C67-B76C-4B95-8CE7-7900DFE0F54B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B850D63F-9BFE-4D67-8EE7-547C67F00125}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B850D63F-9BFE-4D67-8EE7-547C67F00125}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B850D63F-9BFE-4D67-8EE7-547C67F00125}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B850D63F-9BFE-4D67-8EE7-547C67F00125}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
