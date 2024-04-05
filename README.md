@@ -1,6 +1,15 @@
 # .NET Training Batch 3
 
+https://www.entityframeworktutorial.net/efcore/create-model-for-existing-database-in-ef-core.aspx
+https://learn.microsoft.com/en-us/ef/core/cli/dotnet
+
+dotnet tool install --global dotnet-ef 7.0.17
+
  Scaffold-DbContext "Server=.;Database=TestDb;User ID=sa;Password=sasa@123;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context AppDbContext -Tables Tbl_PieChart
+
+ Scaffold-DbContext "Server=.;Database=TestDb;User ID=sa;Password=sasa@123;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir EfCoreDataModels -Context AppDbContext -Tables Tbl_PieChart
+
+ dotnet ef dbcontext scaffold "Server=.;Database=TestDb;User ID=sa;Password=sasa@123;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o EfCoreDataModels -c AppDbContext -t Tbl_PieChart
 
 ```sql
 
