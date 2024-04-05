@@ -1,0 +1,51 @@
+﻿<div id="chart-container">
+    <div id="chart"></div>
+</div>
+
+@section scripts{
+    <script src="~/js/signalr/dist/browser/signalr.js"></script>
+    <script>
+        // let _series = [44, 55, 13, 43, 22];
+        // let _labels = ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'];
+
+        function loadChart(_labels, _series) {
+            $('#chart-container').html(`<div id="chart"></div>`);
+
+            var options = {
+                series: _series,
+                chart: {
+                    width: 380,
+                    type: 'pie',
+                },
+                labels: _labels,
+                responsive: [{
+                    breakpoint: 480,
+                    options: {
+                        chart: {
+                            width: 200
+                        },
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }]
+            };
+
+            var chart = new ApexCharts(document.querySelector("#chart"), options);
+            chart.render();
+        }
+
+        var connection = new signalR.HubConnectionBuilder().withUrl("/notificationHub").build();
+
+        connection.on("ClientReceiveEvent", function (jsonStr) {
+            console.log(jsonStr);
+            const data = JSON.parse(jsonStr);
+            loadChart(data.Labels, data.Series);
+        });
+
+        connection.start().then(function () {
+        }).catch(function (err) {
+            return console.error(err.toString());
+        });
+    </script>
+}

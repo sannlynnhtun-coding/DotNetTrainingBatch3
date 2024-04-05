@@ -28,7 +28,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch3.UI", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch3.ChatApp", "DotNetTrainingBatch3.ChatApp\DotNetTrainingBatch3.ChatApp.csproj", "{A9AB3C67-B76C-4B95-8CE7-7900DFE0F54B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTrainingBatch3.RealtimeChartApp", "DotNetTrainingBatch3.RealtimeChartApp\DotNetTrainingBatch3.RealtimeChartApp.csproj", "{B850D63F-9BFE-4D67-8EE7-547C67F00125}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTrainingBatch3.RealtimeChartApp", "DotNetTrainingBatch3.RealtimeChartApp\DotNetTrainingBatch3.RealtimeChartApp.csproj", "{B850D63F-9BFE-4D67-8EE7-547C67F00125}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetTrainingBatch3.RealtimeChartApp2", "DotNetTrainingBatch3.RealtimeChartApp2\DotNetTrainingBatch3.RealtimeChartApp2.csproj", "{485784D1-C1FC-439F-9658-1E3CE1568298}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -80,6 +82,10 @@ Global
 		{B850D63F-9BFE-4D67-8EE7-547C67F00125}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B850D63F-9BFE-4D67-8EE7-547C67F00125}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B850D63F-9BFE-4D67-8EE7-547C67F00125}.Release|Any CPU.Build.0 = Release|Any CPU
+		{485784D1-C1FC-439F-9658-1E3CE1568298}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{485784D1-C1FC-439F-9658-1E3CE1568298}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{485784D1-C1FC-439F-9658-1E3CE1568298}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{485784D1-C1FC-439F-9658-1E3CE1568298}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
