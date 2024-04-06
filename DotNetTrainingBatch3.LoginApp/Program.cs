@@ -1,3 +1,5 @@
+using DotNetTrainingBatch3.LoginApp.Middlewares;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -14,6 +16,9 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseMiddleware<CookieMiddleware>();
+
 app.UseStaticFiles();
 
 app.UseRouting();

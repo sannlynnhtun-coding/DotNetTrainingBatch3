@@ -1,4 +1,5 @@
 ﻿using DotNetTrainingBatch3.LoginApp.Models;
+using Microsoft.AspNetCore.DataProtection.KeyManagement;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DotNetTrainingBatch3.LoginApp.Controllers
@@ -15,7 +16,10 @@ namespace DotNetTrainingBatch3.LoginApp.Controllers
         [ActionName("Index")]
         public IActionResult LoginIndex(LoginModel reqModel)
         {
-            return Redirect("/Login");
+            CookieOptions option = new CookieOptions();
+            option.Expires = DateTime.Now.AddSeconds(10);
+            Response.Cookies.Append("UserName", reqModel.UserName, option);
+            return Redirect("/Home");
         }
     }
 }
