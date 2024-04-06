@@ -21,5 +21,15 @@ namespace DotNetTrainingBatch3.LoginApp.Controllers
             Response.Cookies.Append("UserName", reqModel.UserName, option);
             return Redirect("/Home");
         }
+
+        // Tbl_User
+        // UserId - guid / ulid
+        // UserName
+        // Password
+
+        // Tbl_Login
+        // UserId
+        // SessionId
+        // SessionExpired
     }
 }
