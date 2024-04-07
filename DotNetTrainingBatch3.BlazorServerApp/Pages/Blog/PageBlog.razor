@@ -1,0 +1,124 @@
+﻿@page "/blog"
+@using Microsoft.EntityFrameworkCore
+@using Newtonsoft.Json
+@inject AppDbContext _db
+
+<PageTitle>Blog</PageTitle>
+
+<div class="mb-3">
+    <label class="form-label">Title</label>
+    <input type="text" class="form-control" @bind-value="requestModel.BlogTitle">
+</div>
+<div class="mb-3">
+    <label class="form-label">Author</label>
+    <input type="text" class="form-control" @bind-value="requestModel.BlogAuthor">
+</div>
+<div class="mb-3">
+    <label class="form-label">Content</label>
+    <input type="text" class="form-control" @bind-value="requestModel.BlogContent">
+</div>
+<button type="button" class="btn btn-dark" @onclick="Cancel">Cancel</button>
+<button type="button" class="btn btn-success" @onclick="Save">Save</button>
+
+@if (lst is not null)
+{
+    int count = 0;
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>No.</th>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Content</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in lst)
+            {
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-warning" @onclick="() => Edit(item.BlogId)">Edit</button>
+                        <button type="button" class="btn btn-danger" @onclick="() => Delete(item.BlogId)">Delete</button>
+                    </td>
+                    <td>@(++count)</td>
+                    <td>@item.BlogId</td>
+                    <td>@item.BlogTitle</td>
+                    <td>@item.BlogAuthor</td>
+                    <td>@item.BlogContent</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private BlogModel requestModel = new();
+    private List<BlogModel>? lst;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await List();
+    }
+
+    private async Task List()
+    {
+        lst = await _db.Blogs
+            .AsNoTracking()
+            .OrderByDescending(x => x.BlogId)
+            .Take(10)
+            .ToListAsync();
+    }
+
+    private async Task Save()
+    {
+        if (requestModel.BlogId == 0)
+        {
+            await _db.Blogs.AddAsync(requestModel);
+        }
+        else
+        {
+            var item = await _db.Blogs.FirstOrDefaultAsync(x => x.BlogId == requestModel.BlogId);
+            if (item is null) return;
+
+            item.BlogTitle = requestModel.BlogTitle;
+            item.BlogAuthor = requestModel.BlogAuthor;
+            item.BlogContent = requestModel.BlogContent;
+        }
+        await _db.SaveChangesAsync();
+
+        requestModel = new();
+        await List();
+    }
+
+    private void Cancel()
+    {
+        requestModel = new();
+    }
+
+    private async Task Edit(int blogId)
+    {
+        var item = await _db.Blogs
+            .AsNoTracking()
+            .FirstOrDefaultAsync(x => x.BlogId == blogId);
+        if (item is null) return;
+
+        requestModel = item;
+        // requestModel = JsonConvert.DeserializeObject<BlogModel>(JsonConvert.SerializeObject(result))!;
+        StateHasChanged();
+    }
+
+    private async Task Delete(int blogId)
+    {
+        var item = await _db.Blogs
+          .AsNoTracking()
+          .FirstOrDefaultAsync(x => x.BlogId == blogId);
+        if (item is null) return;
+
+        _db.Remove(item);
+        await _db.SaveChangesAsync();
+        requestModel = new();
+        await List();
+    }
+}
