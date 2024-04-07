@@ -1,47 +1,52 @@
 ﻿using DotNetTrainingBatch3.LoginApp.Models;
 using Microsoft.AspNetCore.DataProtection.KeyManagement;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace DotNetTrainingBatch3.LoginApp.Controllers
 {
     public class LoginController : Controller
     {
-        [ActionName("Index")]
-        public IActionResult LoginIndex()
+        private readonly ILogger<LoginController> _logger;
+        private readonly AppDBContext _db;
+
+        public LoginController(ILogger<LoginController> logger)
+        {
+            _logger = logger;
+            _db = new AppDBContext();
+        }
+
+        [ActionName("LoginUI")]
+        public IActionResult login()
         {
             return View("LoginIndex");
         }
 
-        [HttpPost]
-        [ActionName("Index")]
-        public IActionResult LoginIndex(LoginModel reqModel)
+        [ActionName("Validatelogin")]
+        public IActionResult Validatelogin(UsersModel User)
         {
-            string id = Guid.NewGuid().ToString();
-            string userId = Ulid.NewUlid().ToString();
+            UsersModel? Checklogin = _db.Users.Where(x => x.UserName == User.UserName && x.Password == User.Password).FirstOrDefault();
 
-            CookieOptions option = new CookieOptions();
-            option.Expires = DateTime.Now.AddSeconds(10);
-            Response.Cookies.Append("UserName", reqModel.UserName, option);
+            if (Checklogin is null)
+            {
+                return View("LoginIndex");
+            }
+
+            CookieOptions cookie = new CookieOptions();
+            DateTime SessionExpire = DateTime.Now.AddSeconds(10);
+            cookie.Expires = SessionExpire;
+            Response.Cookies.Append("Username", User.UserName, cookie);
+            Response.Cookies.Append("Password", User.Password, cookie);
+
+            LoginModel Login = new LoginModel();
+
+            Login.SessionId = Guid.NewGuid().ToString();
+            Login.UserId = Checklogin.UserId;
+            Login.SessionExpired = SessionExpire;
+            _db.Login.Add(Login);
+            _db.SaveChanges();
+
             return Redirect("/Home");
         }
-
-        // Tbl_User
-        // UserId - guid / ulid
-        // UserName
-        // Password
-
-        // Tbl_Login
-        // UserId
-        // SessionId
-        // SessionExpired
-
-        // Create Form 
-        // User (UserName, Password) 
-
-        // check user exist
-        // UserId
-        // New Session Id - guid / ulid
-        // SessionExpired
-        // Tbl_Login
     }
 }

@@ -13,17 +13,17 @@ namespace DotNetTrainingBatch3.LoginApp.Middlewares
 
         public async Task InvokeAsync(HttpContext context)
         {
-            string url = context.Request.Path.ToString().ToLower();
-            if (url == "/login" || url == "/login/index")
-                goto result;
+            string UserName = context.Request.Cookies["Username"]!;
+            string Password = context.Request.Cookies["Password"]!;
+            string URL = context.Request.Path.ToString().ToLower();
+            if (URL == "/login" || URL == "/login/loginui")
+                goto Results;
 
-            string userName = context.Request.Cookies["UserName"]!;
-            if (string.IsNullOrEmpty(userName))
+            if (string.IsNullOrEmpty(UserName) || string.IsNullOrEmpty(Password))
             {
-                context.Response.Redirect("/Login");
+                context.Response.Redirect("/Login/LoginUI");
             }
-
-        result:
+        Results:
             await _next(context);
         }
     }
