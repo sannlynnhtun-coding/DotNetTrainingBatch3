@@ -16,31 +16,36 @@ namespace DotNetTrainingBatch3.LoginApp.Controllers
             _db = new AppDBContext();
         }
 
-        [ActionName("LoginUI")]
+        [ActionName("Index")]
         public IActionResult login()
         {
             return View("LoginIndex");
         }
 
-        [ActionName("Validatelogin")]
+        [HttpPost]
+        [ActionName("Index")]
         public IActionResult Validatelogin(UsersModel User)
         {
-            UsersModel? Checklogin = _db.Users.Where(x => x.UserName == User.UserName && x.Password == User.Password).FirstOrDefault();
+            UsersModel? Checklogin = _db.Users.FirstOrDefault(x => 
+                x.UserName == User.UserName && 
+                x.Password == User.Password);
 
             if (Checklogin is null)
             {
-                return View("LoginIndex");
+                return View("Index");
             }
 
+            string sessionId = Guid.NewGuid().ToString();
+            DateTime SessionExpire = DateTime.Now.AddSeconds(30);
+
             CookieOptions cookie = new CookieOptions();
-            DateTime SessionExpire = DateTime.Now.AddSeconds(10);
             cookie.Expires = SessionExpire;
-            Response.Cookies.Append("Username", User.UserName, cookie);
-            Response.Cookies.Append("Password", User.Password, cookie);
+            Response.Cookies.Append("UserId", Checklogin.UserId, cookie);
+            Response.Cookies.Append("SessionId", sessionId, cookie);
 
             LoginModel Login = new LoginModel();
 
-            Login.SessionId = Guid.NewGuid().ToString();
+            Login.SessionId = sessionId;
             Login.UserId = Checklogin.UserId;
             Login.SessionExpired = SessionExpire;
             _db.Login.Add(Login);

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace DotNetTrainingBatch3.LoginApp.Models
 {
-    [Table("Tbl_Users")]
+    [Table("Tbl_User")]
     public class UsersModel
     {
         [Key]
@@ -11,6 +11,5 @@ namespace DotNetTrainingBatch3.LoginApp.Models
         //[Column("BlogTitle")]
         public string UserName { get; set; }
         public string Password { get; set; }
-
     }
 }

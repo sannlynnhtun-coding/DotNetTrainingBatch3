@@ -11,14 +11,26 @@ namespace DotNetTrainingBatch3.LoginApp
 {
     public class AppDBContext : DbContext
     {
+        //public AppDBContext(DbContextOptions options) : base(options)
+        //{
+        //}
+
         protected override void OnConfiguring(DbContextOptionsBuilder OptionBuilder)
         {
+            //SqlConnectionStringBuilder sqlConnectionStringBuilder = new SqlConnectionStringBuilder()
+            //{
+            //    DataSource = @".\SQL2019E",
+            //    InitialCatalog = "TestDB",
+            //    UserID = "sa",
+            //    Password = "p@ssw0rd",
+            //    TrustServerCertificate = true
+            //};
             SqlConnectionStringBuilder sqlConnectionStringBuilder = new SqlConnectionStringBuilder()
             {
-                DataSource = @".\SQL2019E",
+                DataSource = @".",
                 InitialCatalog = "TestDB",
                 UserID = "sa",
-                Password = "p@ssw0rd",
+                Password = "sasa@123",
                 TrustServerCertificate = true
             };
             OptionBuilder.UseSqlServer(sqlConnectionStringBuilder.ConnectionString);

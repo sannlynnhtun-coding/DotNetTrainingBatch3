@@ -5,8 +5,8 @@ namespace DotNetTrainingBatch3.LoginApp.Controllers
 {
     public class UsersController : Controller
     {
-        private readonly AppDBContext _db;
         private readonly ILogger<UsersController> _logger;
+        private readonly AppDBContext _db;
 
         public UsersController(ILogger<UsersController> logger)
         {
@@ -28,9 +28,7 @@ namespace DotNetTrainingBatch3.LoginApp.Controllers
             _db.Users.Add(users);
             int result = _db.SaveChanges();
 
-            return RedirectToAction("LoginUI", "Login");
-
-
+            return RedirectToAction("Index", "Login");
         }
     }
 }
