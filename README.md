@@ -1,5 +1,8 @@
 # .NET Training Batch 3
 
+Custom Middleware
+https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/write?view=aspnetcore-7.0
+
 - https://www.entityframeworktutorial.net/efcore/create-model-for-existing-database-in-ef-core.aspx
 - https://learn.microsoft.com/en-us/ef/core/cli/dotnet
 
