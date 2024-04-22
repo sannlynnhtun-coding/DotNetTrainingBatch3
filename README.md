@@ -3,6 +3,16 @@
 Custom Middleware
 https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/write?view=aspnetcore-7.0
 
+Accessing DbContext in Middleware
+> This error is likely occurring because any middleware acts as a singleton. You have to avoid using member variables in your middleware. Feel free to inject into the Task Invoke, but don't store the inject value into a member object.
+https://stackoverflow.com/questions/33253834/accessing-dbcontext-in-middleware-in-asp-net-5
+```csharp
+public async Task Invoke(HttpContext context, ApplicationDbContext applicationContext) // Method Injection
+{
+    await _next(context);
+}
+```
+
 - https://www.entityframeworktutorial.net/efcore/create-model-for-existing-database-in-ef-core.aspx
 - https://learn.microsoft.com/en-us/ef/core/cli/dotnet
 
