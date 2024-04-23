@@ -164,9 +164,10 @@ axios
 - [x] Deploy on IIS 
 
 - [x] Realtime Chart App using SignalR 
-- Middleware For MVC
-- Blazor CRUD [Server, WASM]
-- Deploy WASM
+- [x] Middleware For MVC
+- [x] Blazor Server CRUD 
+- [ ] Blazor Web Assembly CRUD [Client CRUD, Server CRUD]
+- Deploy Blazor Web Assembly
 
 ------------------------------------------------------
 
