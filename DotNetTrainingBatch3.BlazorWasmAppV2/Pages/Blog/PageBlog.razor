@@ -58,9 +58,20 @@ else if (requestModel.BlogId is not null)
     </table>
 }
 
+@for (int i = 0; i < 5; i++)
+{
+    int index = i;
+    <input type="checkbox" @onchange="(args) => Change(args, index)">
+}
+@if (isChecked)
+{
+    <span>Heehee</span>
+}
+
 @code {
     private List<BlogModel> Blogs = new List<BlogModel>();
     private BlogModel requestModel = new();
+    private bool isChecked = false;
 
     private void Cancel()
     {
@@ -101,5 +112,11 @@ else if (requestModel.BlogId is not null)
         if (index == -1) return;
 
         Blogs.RemoveAt(index);
+    }
+
+    private void Change(ChangeEventArgs args, int index)
+    {
+        Console.WriteLine(args.Value.ToString() + " => " + index);
+        isChecked = Convert.ToBoolean(args.Value);
     }
 }
